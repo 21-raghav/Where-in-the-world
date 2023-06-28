@@ -1,0 +1,30 @@
+.header {
+    background-color: var(--component-bgcolor);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 -3px 10px 0 hsl(0, 0%, 10%);
+}
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0; 
+    color: var(--text-color);
+}
+.parent h1 {
+    margin: 0;
+    font-size: calc(1vw + 1rem);
+}
+.parent button {
+    background-color: transparent;
+    border: none;
+}
+.parent img {
+    width: calc(2.5vw + 1rem);
+    cursor: pointer;
+}
+
+/* @media (min-width: 1200px) {
+    .header {
+        padding: 2rem 6.5rem;
+    }
+} */
