@@ -1,4 +1,4 @@
-# Where in the world? [Site](https://countries-list-350f0.web.app "(View site)")
+# Where in the world? [Site] (https://countries-list-350f0.web.app "(View site)")
 
 ## A web application to fetch countries data and displays it.
 
