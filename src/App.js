@@ -1,46 +1,40 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import List from "./components/List";
-import FilterList from "./FilterList";
-import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useContext, useState } from "react";
+import ThemeContext from "./Theme-Context";
+
+import RootPage from "./pages/Root";
+import HomePage, { loader as listLoader } from "./pages/Home";
+import DetailPage, { loader as detailLoader } from "./pages/Detail";
+
+import styles from "./App.module.css";
 
 function App() {
-  const [theme, setTheme] = useState("");
-  const [countries, setCountries] = useState([]);
-  const [filteredRegion, setFilteredRegion] = useState("Asia");
-  const [searchedName, setSearchedName] = useState("");
-
-  const themeChangeHandler = () => {
-    if (theme === "dark") setTheme("");
-    else setTheme("dark");
-  };
-
-  const changeRegion = (selectedRegion) => {
-    setFilteredRegion(selectedRegion);
-  };
-
-  const searchCountry = (enteredString) => {
-    setSearchedName(enteredString);
-  };
-
-  async function fetchCountriesHandler () {
-    const res = await fetch('countries.json');
-    const result = await res.json();
-    setCountries(result);
-  }
-
-  fetchCountriesHandler();
-
-  const filteredRegionList = countries.filter((item) => {
-    return item.region === filteredRegion;
-  });
+  const currTheme = useContext(ThemeContext);
+  const [newTheme, setNewTheme] = useState(currTheme);
   
+  const getNewTheme = (data) => {
+    setNewTheme(data);
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootPage onGetTheme={getNewTheme} />,
+      children: [
+        { index: true, element: <HomePage />, loader: listLoader },
+        { path: ":detail", element: <DetailPage />, loader: detailLoader },
+      ],
+    },
+  ]);
+
   return (
-    <div className={`wrapper ${theme}`}>
-      <Header onConfirm={themeChangeHandler} />
-      <FilterList selected={filteredRegion} onChangeFilter={changeRegion} onChangeName={searchCountry}/>
-      <List countryList={filteredRegionList} searchedName={searchedName}/>
-    </div>
+    <>
+      <ThemeContext.Provider value={newTheme}>
+        <div className={`${styles.wrapper} ${styles[newTheme.theme]}`}>
+          <RouterProvider router={router} />
+        </div>
+      </ThemeContext.Provider>
+    </>
   );
 }
 

@@ -462,7 +462,7 @@
     "latlng": [18.25, -63.16666666],
     "demonym": "Anguillian",
     "area": 91,
-    "timezones": ["UTC-04:00"],
+    "timezones": ["UTC-04:00"], 
     "nativeName": "Anguilla",
     "numericCode": "660",
     "flags": {

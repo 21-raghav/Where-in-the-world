@@ -14,5 +14,7 @@
     --text-color: hsl(0, 0%, 100%);
 }
 .wrapper {
+    min-height: 100vh;
     background-color: var(--background-color);
+    transition: background-color 500ms ease-in-out;
 }
