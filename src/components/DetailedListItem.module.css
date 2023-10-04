@@ -70,6 +70,16 @@
     transition-property: background-color, color;
     transition: 500ms ease-in-out;
 }
+.no-result-para {
+  padding: 0 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  transition-property: color;
+  transition: 500ms ease-in-out;
+}
 
 @media (min-width: 900px) {
   .detail-data-wrapper {

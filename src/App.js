@@ -26,7 +26,7 @@ function App() {
       ],
     },
   ]);
-
+  console.log("run from app");
   return (
     <>
       <ThemeContext.Provider value={newTheme}>

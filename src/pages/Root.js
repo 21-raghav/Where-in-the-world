@@ -5,7 +5,7 @@ const RootPage = ({onGetTheme}) => {
     const getUpdatedTheme = (data) => {
         onGetTheme(data);
     };
-
+    console.log("run from root");
     return (
         <>
         <Header onThemeUpdate={getUpdatedTheme} />

@@ -4,14 +4,11 @@ import List from "../components/List";
 
 const HomePage = () => {
   const data = useLoaderData();
-
+  console.log("run from home");
   return (
-    <>
       <List list={data} />
-    </>
   );
 };
-
 export default HomePage;
 
 export async function loader() {

@@ -5,6 +5,7 @@ import Card from "./UI/Card";
 import styles from "./DetailedListItem.module.css";
 
 const DetailedListItem = (props) => {
+  console.log("run from detailList")
   return (
     <Card>
       <div className={styles["back-button-wrapper"]}>
@@ -52,9 +53,17 @@ const DetailedListItem = (props) => {
           <div className={styles["border-country-text-wrapper"]}>
             <p>
               <b>Border Countries:&ensp;</b>{" "}
-              {props.data.borders.map((item) => (
-                <span className={styles["border-country-text"]}>{item}</span>
-              ))}
+              {props.data.borders in props.data ? (
+                props.data.borders.map((item) => (
+                  <span key={item} className={styles["border-country-text"]}>
+                    {item}
+                  </span>
+                ))
+              ) : (
+                <span className={styles["no-result-para"]}>
+                  No border countries.
+                </span>
+              )}
             </p>
           </div>
         </div>
