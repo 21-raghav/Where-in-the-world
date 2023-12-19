@@ -1,5 +1,7 @@
 .card {
-    margin: 0 1.5rem;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-color);
 }
 @media (min-width: 1200px) {
     .card {

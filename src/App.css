@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-* {
-    margin: 0;
-}
 :root {
     --background-color: hsl(0, 0%, 98%);
     --component-bgcolor: hsl(0, 0%, 100%);
     --text-color: hsl(200, 15%, 8%);
+    --shadow-color: 0 5px 10px 0 hsla(0, 0%, 10%, 0.1);
   }
   
 .dark {
     --background-color: hsl(207, 26%, 17%);
     --component-bgcolor: hsl(209, 23%, 22%);
     --text-color: hsl(0, 0%, 100%);
+    --shadow-color: 0 5px 10px 0 hsla(0, 0%, 10%);
 }
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     background-color: var(--background-color);
 }

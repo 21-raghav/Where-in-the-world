@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem 0;
+    box-shadow: initial;
 }
 .filterList-wrapper > select, .filterList-wrapper > input {
     padding: .7rem 1rem;
@@ -12,6 +12,8 @@
     border: none;
     border-radius: 10px;
     background-color: var(--component-bgcolor);
+    border-radius: 15px;
+    box-shadow: var(--shadow-color);
     outline: none;
     cursor: pointer;
 }
@@ -20,7 +22,6 @@
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
 }
-
 @media (min-width: 1200px) {
     .filterList-wrapper {
         justify-content: flex-end;
