@@ -20,14 +20,13 @@
 //     </div>
 // =======
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useContext, useState } from "react";
-// import ThemeContext from "./Theme-Context";
+import { useState } from "react";
 
-import RootPage from "./pages/Root";
-import HomePage, { loader as listLoader } from "./pages/Home";
+import RootPage from "./pages/RootPage";
+import HomePage from "./pages/Home";
 import DetailPage, { loader as detailLoader } from "./pages/Detail";
 
-import styles from "./App.module.css";
+import "./App.css";
 
 function App() {
   // const currTheme = useContext(ThemeContext);
@@ -40,7 +39,7 @@ function App() {
   const [theme, setTheme] = useState("");
 
   const themeChangeHandler = () => {
-    theme === "dark" ? setTheme("") : setTheme("dark");
+    theme === "" ? setTheme("dark") : setTheme("");
   };
 
 
@@ -49,7 +48,7 @@ function App() {
       path: "/",
       element: <RootPage onThemeChange={themeChangeHandler} />,
       children: [
-        { index: true, element: <HomePage />, loader: listLoader },
+        { index: true, element: <HomePage /> },
         { path: ":detail", element: <DetailPage />, loader: detailLoader },
       ],
     },
@@ -58,7 +57,7 @@ function App() {
   return (
     <>
       {/* <ThemeContext.Provider value={newTheme}> */}
-        <div className={`${styles.wrapper}`}>
+        <div className="wrapper">
           <RouterProvider router={router} />
         </div>
       {/* </ThemeContext.Provider> */}

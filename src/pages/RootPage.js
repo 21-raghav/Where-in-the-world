@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom'
 import Header from "../components/Header";
 
 const RootPage = ({onThemeChange}) => {
-    const getUpdatedTheme = (data) => {
-        onThemeChange(data);
+    const getUpdatedTheme = () => {
+        onThemeChange();
     };
     console.log("run from root");
     return (

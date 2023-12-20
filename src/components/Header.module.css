@@ -1,31 +1,28 @@
 .header {
-    background-color: var(--component-bgcolor);
-    box-shadow: 0 -3px 10px 0 hsl(0, 0%, 10%);
-    transition: all 500ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: var(--text-color);
+  background-color: var(--component-bgcolor);
+  box-shadow: var(--shadow-color);
+  transition: all 500ms ease-in-out;
 }
-.parent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem; 
-    color: var(--text-color);
-    transition: color 500ms ease-in-out;
+.header h1 {
+  font-size: calc(1vw + 1rem);
 }
-.parent h1 {
-    margin: 0;
-    font-size: calc(1vw + 1rem);
+.header button {
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
 }
-.parent button {
-    padding: 0;
-    background-color: transparent;
-    border: none;
-}
-.parent img {
-    width: calc(1.5vw + 1rem);
-    cursor: pointer;
+.header img {
+  width: calc(1vw + 1.5rem);
+  cursor: pointer;
 }
 @media (min-width: 1200px) {
-    .header {
-        padding: 2rem 6rem;
-    }
+  .header {
+    padding: 2rem 6rem;
+  }
 }
