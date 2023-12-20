@@ -15,5 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    min-height: 100vh;
     background-color: var(--background-color);
+    transition: all 500ms ease-in-out;
 }

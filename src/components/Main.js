@@ -4,6 +4,7 @@ import FilterList from "../FilterList";
 import List from "./List";
 
 let COUNTRIES_DATA;
+
 //   fn to fetch countries data
 try {
     const data = await fetch("countries.json");
@@ -36,7 +37,6 @@ const Main = () => {
 
   if (String(countryName) !== "") {
     const name = `${countryName.at(0).toUpperCase()}${countryName.slice(1)}`;
-    console.log(name);
     filteredRegionList = filteredRegionList.filter((item) =>
       item.name.startsWith(name)
     );

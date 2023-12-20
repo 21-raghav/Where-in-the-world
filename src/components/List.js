@@ -3,6 +3,12 @@ import ListItem from "./ListItem";
 import styles from "./List.module.css";
 
 const List = ({countryList}) => {
+  if(countryList.length < 1)
+    return (
+      <Card className={styles['list-wrapper']}>
+        <p className={styles["no-result-para"]}>No result!</p>
+      </Card>
+    );
   return (
     <Card className={styles['list-wrapper']}>
       {countryList.map((item) => (
