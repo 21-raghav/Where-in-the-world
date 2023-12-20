@@ -1,8 +1,8 @@
-<<<<<<< .merge_file_bghw7L
+// <<<<<<< .merge_file_bghw7L
 import themeIcon from "../assets/brightness-and-contrast.png";
 import styles from "./Header.module.css";
 
-const Header = ({onConfirm}) => {
+const Header = ({onThemeUpdate}) => {
   return (
     <header className={styles.header}>
       <h1>Where in the world?</h1>
@@ -10,10 +10,10 @@ const Header = ({onConfirm}) => {
         <img
           src={themeIcon}
           alt="theme-change-icon"
-          onClick={onConfirm}
+          onClick={onThemeUpdate}
         />
       </button>
-=======
+{/* =======
 import { useContext } from "react";
 import ThemeContext from "../Theme-Context";
 
@@ -55,7 +55,7 @@ const Header = ({onThemeUpdate}) => {
           />
         </button>
       </Card>
->>>>>>> .merge_file_0cApBU
+>>>>>>> .merge_file_0cApBU */}
     </header>
   );
 };
