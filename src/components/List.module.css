@@ -1,5 +1,53 @@
 .list-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 4rem;
+  display: grid;
+  grid-template-columns: 400px;
+  justify-content: center;
+  gap: 4rem;
+}
+.no-result-para {
+  padding: 0 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-align: center;
+  transition-property: color;
+  transition: 500ms ease-in-out;
+}
+@media (min-width: 715px){
+.list-wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+}
+
+.filterList-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.filterList-wrapper > select, 
+.filterList-wrapper > input {
+  padding: .7rem 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px -5px hsl(0, 0%, 10%);
+  background-color: var(--component-bgcolor);
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition: 500ms ease-in-out;
+  appearance: none;
+}
+.filterList-wrapper > select > option {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .filterList-wrapper {
+      justify-content: flex-end;
+      gap: 1rem;
+  }
 }
