@@ -2,7 +2,7 @@ import themeIcon from "../assets/brightness-and-contrast.png";
 import styles from "./Header.module.css";
 
 const Header = ({ onThemeUpdate }) => {
-  
+  // console.log("HEADER");
   return (
     <header className={styles.header}>
       <h1>Where in the world?</h1>

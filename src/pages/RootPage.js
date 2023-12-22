@@ -7,13 +7,11 @@ const RootPage = ({ onThemeChange }) => {
   const getUpdatedTheme = () => {
     onThemeChange();
   };
-  
+  // console.log("ROOT PAGE");
   return (
     <>
       <Header onThemeUpdate={getUpdatedTheme} />
-      {/* <main> */}
-        <Outlet />
-      {/* </main> */}
+      <Outlet />
     </>
   );
 };

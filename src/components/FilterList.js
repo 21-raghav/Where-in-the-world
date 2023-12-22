@@ -1,11 +1,8 @@
-import Card from "./components/UI/Card";
+import Card from "./UI/Card";
 import styles from "./FilterList.module.css";
 
 const FilterList = (props) => {
-  // const dropDownHandler = (event) => {
-  //   props.onChangeFilter(event.target.value);
-  // };
-
+  
   const searchResultHandler = (event) => {
     setTimeout(() => props.onInputChange(event.target.value), 1300);
   };
@@ -14,13 +11,14 @@ const FilterList = (props) => {
     props.onChangeContinent(event.target.value);
   };
 
+  // console.log("FILTERLIST");
   return (
     <Card className={styles["filterList-wrapper"]}>
       <input
         type="search"
         placeholder="Search for a country..."
         onChange={searchResultHandler}
-        spellcheck="false"
+        // spellcheck="false"
       />
       <select value={props.selectedContinent} onChange={onInputChangeHandler}>
         <option value="Africa">Africa</option>

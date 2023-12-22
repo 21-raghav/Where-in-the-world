@@ -1,17 +1,17 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 
-import FilterList from "../FilterList";
+import FilterList from "./FilterList";
 import List from "./List";
 
 let COUNTRIES_DATA;
 
 //   fn to fetch countries data
 try {
-    const data = await fetch("countries.json");
-    const result = await data.json();
-    COUNTRIES_DATA = result;
-  } catch (err) {
-    console.log(err);
+  const data = await fetch("countries.json");
+  const result = await data.json();
+  COUNTRIES_DATA = result;
+} catch (err) {
+  console.log(err);
 }
 
 const Main = () => {
@@ -20,6 +20,22 @@ const Main = () => {
 
   // store countries data to work with
   const ref = useRef(COUNTRIES_DATA);
+
+  const cacheData = useMemo(() => {
+    //   list of countries to display in app
+    let filteredRegionList = ref.current.filter((item) => {
+      return item.region === continent;
+    });
+
+    if (String(countryName) !== "") {
+      const name = `${countryName.at(0).toUpperCase()}${countryName.slice(1)}`;
+      filteredRegionList = filteredRegionList.filter((item) =>
+        item.name.startsWith(name)
+      );
+    }
+    // console.log("MAIN");
+    return filteredRegionList;
+  }, [continent, countryName]);
 
   //   fn's to update states from filterlist component
   const getContinent = (cont) => {
@@ -30,18 +46,6 @@ const Main = () => {
     setCountryName(currName);
   };
 
-  //   list of countries to display in app
-  let filteredRegionList = ref.current.filter((item) => {
-    return item.region === continent;
-  });
-
-  if (String(countryName) !== "") {
-    const name = `${countryName.at(0).toUpperCase()}${countryName.slice(1)}`;
-    filteredRegionList = filteredRegionList.filter((item) =>
-      item.name.startsWith(name)
-    );
-  }
-
   return (
     <main>
       <FilterList
@@ -49,7 +53,7 @@ const Main = () => {
         onChangeContinent={getContinent}
         onInputChange={getCountry}
       />
-      <List countryList={filteredRegionList} />
+      <List countryList={cacheData} />
     </main>
   );
 };

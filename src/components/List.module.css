@@ -1,7 +1,7 @@
 .list-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: 400px;
+  grid-template-columns: 370px;
   justify-content: center;
   gap: 4rem;
   min-height: 60vh;
@@ -14,8 +14,6 @@
   font-weight: 600;
   font-size: 2rem;
   color: var(--text-color);
-  transition-property: color;
-  transition: 500ms ease-in-out;
   transform: translate(-50%, -50%);
 }
 @media (min-width: 715px) {

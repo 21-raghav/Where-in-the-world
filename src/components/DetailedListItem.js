@@ -4,7 +4,7 @@ import Card from "./UI/Card";
 import styles from "./DetailedListItem.module.css";
 
 const DetailedListItem = (props) => {
-  console.log("run from detailList")
+  // console.log("DETAILLIST")
   return (
     <Card>
       <div className={styles["back-button-wrapper"]}>

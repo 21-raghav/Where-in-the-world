@@ -24,6 +24,9 @@ function App() {
       ],
     },
   ]);
+
+  // console.log("APP");
+
   return (
     <div className={`wrapper ${theme}`}>
       <RouterProvider router={router} />

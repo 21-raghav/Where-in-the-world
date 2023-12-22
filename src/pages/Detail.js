@@ -4,7 +4,7 @@ import DetailedListItem from "../components/DetailedListItem";
 
 const DetailPage = () => {
   const data = useLoaderData();
-  console.log("run from detail");
+  // console.log("DETAIL PAGE");
   return (<DetailedListItem data={data}/>);
 };
 
