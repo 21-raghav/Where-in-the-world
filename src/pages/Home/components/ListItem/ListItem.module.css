@@ -1,19 +1,20 @@
 .list-item {
-  min-height: 490px;
+  min-height: 460px;
   background-color: var(--component-bgcolor);
   border-radius: 10px;
   box-shadow: var(--shadow-color);
   transition: all 500ms ease-in-out;
 }
-.list-item-img {
+.list-item-img-wrapper {
   box-shadow: var(--shadow-color);
   line-height: 0;
   transition: all 500ms ease-in-out;
 }
-.list-item-img > img {
+.list-item-img-wrapper > img {
   width: 100%;
   height: calc(1vh + 13rem);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: 10px 10px 0 0;
 }
 .list-item-text {

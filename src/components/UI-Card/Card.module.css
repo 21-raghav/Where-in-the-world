@@ -1,18 +1,19 @@
 .card {
-    padding: 10px;
+    padding: 16px;
     border-radius: 20px;
-    box-shadow: var(--shadow-color);
+    /* box-shadow: var(--shadow-color); */
     transition: all 500ms ease-in-out;
 }
 @media (min-width: 768px) {
     .card {
-        width: 740px;
+        width: 750px;
         margin: 0 auto;
     }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1080px) {
     .card {
-        width: 1080px;
+        width: 1000px;
+        padding: 0;
         margin: 0 auto;
     }
 }

@@ -1,10 +1,9 @@
 .list-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: 370px;
+  grid-template-columns: 350px;
   justify-content: center;
-  gap: 4rem;
-  min-height: 60vh;
+  gap: 32px;
 }
 .no-result-para {
   position: absolute;
@@ -16,7 +15,7 @@
   color: var(--text-color);
   transform: translate(-50%, -50%);
 }
-@media (min-width: 715px) {
+@media (min-width: 768px) {
   .list-wrapper {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }

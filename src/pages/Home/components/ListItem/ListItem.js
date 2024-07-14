@@ -4,14 +4,15 @@ import styles from "./ListItem.module.css";
 
 const ListItem = (props) => {
   // console.log("LIST-ITEM");
+
   return (
     <Link
       to={props.url}
-      preventScrollReset={true}
+      state={props.details}
       style={{ textDecoration: "none" }}
     >
       <div className={styles["list-item"]}>
-        <figure className={styles["list-item-img"]}>
+        <figure className={styles["list-item-img-wrapper"]}>
           <img src={props.flag} alt="Country Flag" />
         </figure>
         <div className={styles["list-item-text"]}>
@@ -19,7 +20,7 @@ const ListItem = (props) => {
           <ul>
             <li>
               <span className={styles.bold}>Population:</span>
-              {props.population}
+              {props.population.toLocaleString("en-IN")}
             </li>
             <li>
               <span className={styles.bold}>Region:</span>

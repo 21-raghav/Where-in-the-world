@@ -1,37 +1,24 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState } from "react";
 
-import RootPage from "./pages/RootPage";
-import HomePage from "./pages/Home";
-import DetailPage, { loader as detailLoader } from "./pages/Detail";
+import RootPage from "./pages/Root/RootPage";
+import HomePage from "./pages/Home/HomePage";
+import DetailPage from "./pages/Detail/Detail";
 
 import "./App.css";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: ":detail", element: <DetailPage /> },
+    ],
+  },
+]);
+
 function App() {
-  const [theme, setTheme] = useState("");
-
-  const themeChangeHandler = () => {
-    theme === "" ? setTheme("dark") : setTheme("");
-  };
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <RootPage onThemeChange={themeChangeHandler} />,
-      children: [
-        { index: true, element: <HomePage /> },
-        { path: ":detail", element: <DetailPage />, loader: detailLoader },
-      ],
-    },
-  ]);
-
-  // console.log("APP");
-
-  return (
-    <div className={`wrapper ${theme}`}>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
