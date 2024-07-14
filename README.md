@@ -32,7 +32,7 @@ The users are able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/21-raghav/Where-in-the-world)
-- Live Site URL: [Live Site](https://country-finder-85bdb.web.app/)
+- Live Site URL: [Live Site](https://where-in-the-world-mocha.vercel.app/)
 
 ## My process
 
