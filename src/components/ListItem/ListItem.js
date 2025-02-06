@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./ListItem.module.css";
 
 const ListItem = (props) => {
-  // console.log("LIST-ITEM");
 
   return (
     <Link
       to={props.url}
       state={props.details}
-      style={{ textDecoration: "none" }}
     >
       <div className={styles["list-item"]}>
         <figure className={styles["list-item-img-wrapper"]}>

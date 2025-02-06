@@ -1,0 +1,25 @@
+.section-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: 370px;
+  justify-content: center;
+  gap: 32px;
+  padding: var(--box-padding);
+}
+@media (min-width: 768px) {
+  .section-list {
+    grid-template-columns: repeat(2, max(370px));
+  }
+}
+@media (min-width: 1024px) {
+  .section-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.no-result-para {
+  padding: var(--box-padding);
+  font-size: calc(2vw + 12px);
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+}

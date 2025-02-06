@@ -1,26 +1,25 @@
 .list-item {
   min-height: 460px;
   background-color: var(--component-bgcolor);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow-color);
-  transition: all 500ms ease-in-out;
+  transition: var(--transition-effect);
 }
 .list-item-img-wrapper {
   box-shadow: var(--shadow-color);
   line-height: 0;
-  transition: all 500ms ease-in-out;
+  transition: var(--transition-effect);
 }
 .list-item-img-wrapper > img {
   width: 100%;
   height: calc(1vh + 13rem);
   object-fit: contain;
-  object-position: center;
   border-radius: 10px 10px 0 0;
 }
 .list-item-text {
   padding: 2rem 1.5rem;
   color: var(--text-color);
-  transition: all 500ms ease-in-out;
+  transition: var(--transition-effect);
 }
 .list-item-text h3 {
   font-size: calc(1vw + 0.8rem);

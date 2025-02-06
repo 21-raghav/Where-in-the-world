@@ -51,5 +51,3 @@ The users are able to:
 - CSS3, CSS modules
 - Create-react-app
 - Deployed on Firebase
-
-

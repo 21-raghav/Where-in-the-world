@@ -1,0 +1,50 @@
+.section-filter {
+  width: 100%;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  .section-filter {
+    padding: 24px 32px;
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 991px) {
+  .container {
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}
+.container > select,
+.container > input {
+  padding: 8px 16px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--component-bgcolor);
+  border-radius: 15px;
+  box-shadow: var(--shadow-color);
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+@media (min-width: 768px) {
+  .container > select,
+  .container > input {
+    font-size: 18px;
+  }
+}
+.container > select > option {
+  padding: 16px;
+  margin: 16px 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}

@@ -1,0 +1,45 @@
+:root {
+  --pg-max-width: 1200px;
+  --box-padding: 16px;
+  --box-padding-mobile: 16px;
+  --box-padding-tablet: 24px;
+  --box-padding-desktop: 32px;
+  --font-title-3-mobile: 22px;
+  --font-title-3-tablet: 26px;
+  --font-title-3-desktop: 30px;
+  --font-content-mobile: 16px;
+  --font-content-tablet: 20px;
+  --font-nunito: "Nunito Sans", sans-serif;
+  --border-radius: 10px;
+  --shadow: 0 0 15px -5px hsl(0, 0%, 0%, 0.5);
+  --transition-effect: 500ms ease-in-out;
+}
+@media (min-width: 768px) {
+  :root {
+    --box-padding: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --box-padding: 32px;
+  }
+}
+.light {
+  --background-color: hsl(0, 0%, 98%);
+  --component-bgcolor: hsl(0, 0%, 100%);
+  --text-color: hsl(200, 15%, 8%);
+  --shadow-color: 0 0 15px -5px hsla(0, 0%, 0%, 0.5);
+}
+.dark {
+  --background-color: hsl(207, 26%, 17%);
+  --component-bgcolor: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --shadow-color: 0 0 15px -5px hsla(0, 0%, 0%, 1);
+}
+.wrapper {
+  min-width: 350px;
+  min-height: 100vh;
+  /* padding-left: calc(100vw - 100%); */
+  background-color: var(--background-color);
+  transition: all 500ms ease-in-out;
+}
